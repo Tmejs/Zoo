@@ -1,0 +1,41 @@
+org 100h
+
+;utworzenie pliku
+mov ah,3ch
+
+;dajemy pelen dostep do pliku wszytskim
+mov cx,0
+
+;adres nazwy naszego pliku
+mov dx,nazwa
+
+;wywolanie przerwania
+int 21h
+
+;kopiujemy file_handler
+mov bx,ax
+
+
+;w AX mamy nasz file handler
+;kod naszej funkcji
+mov ah,40h
+
+;ilosc bitow ktore beda wpisane
+mov cx,10
+
+;adres naszego imienia
+mov dx,imie
+
+;wywolanie przewolania
+int 21h
+
+
+; zakonczyc sie
+mov ax, 4c00h
+int 21h
+
+;nasza nazwa pliku
+nazwa db "stworzony_plik",0
+imie db "Mateusz",0
+
+
