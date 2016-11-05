@@ -1,0 +1,41 @@
+;programik wczytujacy 
+
+org 100h
+
+
+;kod funkcji
+mov ah,01h
+
+;wywolanie przerwania
+int 21h
+
+;kod znaku w AL
+
+;przezucamy do dl bo tak dziala funkcja
+mov dl,al
+
+;kod funkcji wypisania znaku
+mov ah,02h
+
+;wywolanie przerwania
+int 21h
+
+
+;wypisanie drugi raz
+;kod funkcji wypisania znaku
+mov ah,02h
+
+;wywolanie przerwania
+int 21h
+
+
+
+
+; zakonczyc sie
+mov ax, 4c00h
+int 21h
+
+
+
+
+
